@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, Text } from 'react-native';
 
-const Input = ({ label, value, onChangeText }) => {
+const Input = ({ label, placeholder, value, onChangeText }) => {
   return (
     <View>
       <Text style={styles.label}>{label}</Text>
       <TextInput
+        placeholder={placeholder}
+        autoCorrect={false}
         style={styles.input}
         value={value}
         onChangeText={onChangeText}
@@ -23,9 +25,9 @@ const styles = StyleSheet.create({
     lineHeight: 23
   },
   label: {
-    fontSize: 18
-  },
-  container: {}
+    fontSize: 14,
+    paddingVertical: 5
+  }
 });
 
 export { Input };

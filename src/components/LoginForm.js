@@ -3,16 +3,17 @@ import { Button } from 'react-native';
 import { Card, CardSection, Input } from './common';
 
 class LoginForm extends Component {
-  state = { text: '' };
+  state = { email: '' };
 
   render() {
     return (
       <Card>
         <CardSection>
           <Input
-            label='Email'
-            value={this.state.text}
-            onChangeText={text => this.setState({ text })}
+            label='Your email adress'
+            placeholder='you@example.com'
+            value={this.state.email}
+            onChangeText={email => this.setState({ email })}
           />
         </CardSection>
         <CardSection />
