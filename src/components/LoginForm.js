@@ -28,7 +28,6 @@ class LoginForm extends Component {
     });
   }
 
-
   onLoginSuccess() {
     this.setState({
       email: '',
