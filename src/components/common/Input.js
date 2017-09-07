@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View, Text } from 'react-native';
 
 const Input = ({ label, placeholder, secureTextEntry, value, onChangeText }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
       <TextInput
         secureTextEntry={secureTextEntry}
@@ -19,15 +19,19 @@ const Input = ({ label, placeholder, secureTextEntry, value, onChangeText }) => 
 };
 
 const styles = StyleSheet.create({
-  input: {
-    color: '#000',
-    paddingVertical: 5,
-    fontSize: 18,
-    lineHeight: 23
+  container: {
+    padding: 5,
   },
   label: {
     fontSize: 14,
     paddingVertical: 5
+  },
+  input: {
+    color: '#000',
+    paddingVertical: 5,
+    fontSize: 18,
+    lineHeight: 23,
+    padding: 10,
   }
 });
 

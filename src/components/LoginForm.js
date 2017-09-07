@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import firebase from 'firebase';
 import { Button } from 'react-native';
 import { Spinner, Card, CardSection, Input } from './common';
@@ -52,25 +52,27 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Card>
-        <CardSection>
-          <Input
-            label='Your email adress'
-            placeholder='you@example.com'
-            value={this.state.email}
-            onChangeText={email => this.setState({ email })}
-          />
-        </CardSection>
+      <View>
+        <Card>
+          <CardSection>
+            <Input
+              label='Your email adress'
+              placeholder='you@example.com'
+              value={this.state.email}
+              onChangeText={email => this.setState({ email })}
+            />
+          </CardSection>
 
-        <CardSection>
-          <Input
-            label='Your password'
-            placeholder='*******'
-            secureTextEntry={true}
-            value={this.state.password}
-            onChangeText={password => this.setState({ password })}
-          />
-        </CardSection>
+          <CardSection>
+            <Input
+              label='Your password'
+              placeholder='*******'
+              secureTextEntry={true}
+              value={this.state.password}
+              onChangeText={password => this.setState({ password })}
+            />
+          </CardSection>
+        </Card>
 
         <Text style={styles.textError}>
           {this.state.error}
@@ -78,7 +80,7 @@ class LoginForm extends Component {
 
         {this.renderButton()}
 
-      </Card>
+      </View>
     );
   }
 }
@@ -87,7 +89,7 @@ const styles = StyleSheet.create({
   textError: {
     color: 'red',
     alignSelf: 'center',
-    paddingVertical: 20
+    marginVertical: 20
   }
 });
 
